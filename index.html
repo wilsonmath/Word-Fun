@@ -1,26 +1,91 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <h2><u>Learn words that may be useless<u></h2>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>words</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <button id="myButton" class="button">Generate</button>
-<pre id="wordOutput"></pre>
+  <div class="lines" aria-hidden="true">
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+  </div>
 
-<div class="lines">
-  <div class="line"></div>
-  <div class="line"></div>
-  <div class="line"></div>
-  <div class="line"></div>
-  <div class="line"></div>
-  <div class="line"></div>
-  <div class="line"></div>
-  <div class="line"></div>
-  <div class="line"></div>
-  <div class="line"></div>
-</div>
+  <div class="page">
+
+    <header>
+      <div class="masthead">
+        <span class="masthead-label">1.8</span>
+        <h1>WORDS</h1>
+        <span class="masthead-label" id="dateStamp"></span>
+      </div>
+      <div class="rule thick"></div>
+      <p class="subhead">Words that may be useless</p>
+      <div class="rule"></div>
+    </header>
+
+    <main>
+
+      <section class="word-section" id="idleState">
+        <p class="idle-prompt">— Press generate —</p>
+      </section>
+
+      <section class="word-section hidden" id="loadingState">
+        <p class="loading-label" id="loadingDots">Finding a word</p>
+      </section>
+
+      <section class="word-section hidden" id="resultState">
+        <div class="word-meta-row">
+          <span class="pos-tag" id="posDisplay"></span>
+          <span class="word-count-tag" id="wordCount"></span>
+        </div>
+
+        <h2 class="word-headline" id="wordDisplay"></h2>
+
+        <div class="rule"></div>
+
+        <div class="definitions-block">
+          <p class="block-label">Definitions</p>
+          <ol class="defs" id="definitionsList"></ol>
+        </div>
+
+        <div class="rule"></div>
+
+        <div class="synonyms-row" id="synonymsRow">
+          <span class="block-label">Syn.</span>
+          <span class="tag-list" id="synonymsDisplay"></span>
+        </div>
+
+        <div class="synonyms-row" id="antonymsRow">
+          <span class="block-label">Ant.</span>
+          <span class="tag-list" id="antonymsDisplay"></span>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <div class="rule"></div>
+      <div class="footer-row">
+        <button id="myButton" class="generate-btn">Generate</button>
+      </div>
+    </footer>
+
+  </div>
 
   <script src="script.js" defer></script>
 </body>
+</html>
